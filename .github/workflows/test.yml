@@ -8,5 +8,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: pip install -e '.[dev]'
-      - run: pytest -q
+      - name: Install
+        run: pip install -e '.[dev]'
+      - name: Unit and integration tests
+        run: pytest -q
+      - name: CLI smoke test
+        run: |
+          datafoundry examples/customers_dirty.csv --output ci-output
+          test -s ci-output/clean.csv
+          test -s ci-output/quarantine.csv
+          test -s ci-output/violations.json
+          test -s ci-output/run_receipt.json
