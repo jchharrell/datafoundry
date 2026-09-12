@@ -1,0 +1,6 @@
+customer_id,email,age,state
+1001, JARED@EXAMPLE.COM ,22,North Carolina
+1002,not-an-email,151,n.c.
+1003,customer3@example.com,37,SC
+1003,duplicate@example.com,40,South Carolina
+1004,customer4@example.com,29,Virginia
