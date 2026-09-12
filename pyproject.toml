@@ -4,13 +4,16 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "datafoundry"
-version = "0.1.0"
-description = "Auditable data-quality and cleaning pipeline"
+version = "0.2.0"
+description = "Auditable data-quality pipeline with contracts, quarantine, lineage receipts, and reproducible cleaning"
 requires-python = ">=3.10"
 dependencies = ["pandas>=2.1"]
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0"]
+
+[project.scripts]
+datafoundry = "datafoundry.cli:main"
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]
